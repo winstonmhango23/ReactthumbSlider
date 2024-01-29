@@ -14,11 +14,11 @@ const SlideMain: React.FC<SlideMainProps> = () => {
     const [itemActive, setItemActive] = useState<number>(0);
 
     const items = [
-        { src: 'image/img1.png', title: 'Slider 01', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
-        { src: 'image/img2.jpg', title: 'Slider 02', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
-        { src: 'image/img3.jpg', title: 'Slider 03', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
-        { src: 'image/img4.jpg', title: 'Slider 04', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
-        { src: 'image/img5.jpg', title: 'Slider 05', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
+        { src: 'image/bmw1.jpg', title: 'Slider 01', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
+        { src: 'image/bmw2.jpg', title: 'Slider 02', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
+        { src: 'image/bmw3.jpg', title: 'Slider 03', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
+        { src: 'image/bmw4.jpg', title: 'Slider 04', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
+        { src: 'image/bmw5.jpg', title: 'Slider 05', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?' },
     ];
 
     const showSlider = (index: number) => {
@@ -46,7 +46,8 @@ const SlideMain: React.FC<SlideMainProps> = () => {
             <Navbar />
             <div className="slider">
                 {/* Slide Images */}
-                <div className="list">
+               {/* Slide Images */}
+               <div className="list">
                     {items.map((item, index) => (
                         <SlideImages
                             key={index}
@@ -58,15 +59,12 @@ const SlideMain: React.FC<SlideMainProps> = () => {
                     ))}
                 </div>
                 {/* Conditional Rendering of TextContainer */}
-                {items.map((item, index) => (
-                    index === itemActive && (
-                        <TextContainer
-                            key={index}
-                            title={item.title}
-                            description={item.description}
-                        />
-                    )
-                ))}
+                {items.length > 0 && (
+                    <TextContainer
+                        title={items[itemActive].title}
+                        description={items[itemActive].description}
+                    />
+                )}
                 {/* Slide Control Arrows */}
                 <SlideControlArrows onPrevClick={handlePrevClick} onNextClick={handleNextClick} />
                 {/* Thumbnail */}

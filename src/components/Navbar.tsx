@@ -4,11 +4,11 @@ import React from 'react';
 const Navbar: React.FC = () => {
     return (
         <header>
-        <div className="logo">CodeSnnipetsCollege</div>
+        <div className="logo">BMW</div>
         <ul className="menu">
             <li>Home</li>
-            <li>Blog</li>
-            <li>Info</li>
+            <li>Cars</li>
+            <li>Orders</li>
         </ul>
         <div className="search">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

@@ -17,7 +17,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ items, activeIndex, onClick }) =>
                     onClick={() => onClick(index)}
                 >
                     <img src={item.src} alt={`Thumbnail ${index + 1}`} />
-                    <div className="content">Name Slider</div>
+                    <div className="content">BMW Model</div>
                 </div>
             ))}
         </div>
